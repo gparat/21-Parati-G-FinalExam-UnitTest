@@ -8,7 +8,9 @@ public class StringCalculator {
                 if(num<0){
                     throw new IllegalArgumentException("Negatives not allowed");
                 }
-                returnValue += num;
+                if(num<=1000){
+                    returnValue += num;
+                }
             }
         }
         return returnValue;

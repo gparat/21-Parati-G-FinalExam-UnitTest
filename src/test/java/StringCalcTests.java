@@ -19,7 +19,7 @@ public class StringCalcTests {
     }
 
     @Test
-    public void testException() {//testing if IndexOutOfBoundsException is thrown when a endword is to large
+    public void testException1() {//testing if IllegalArgumentException is thrown when a negative number is input
         String nums="-1, 10";
         try{
             int n = calc.add(nums);
@@ -27,5 +27,20 @@ public class StringCalcTests {
         catch (IllegalArgumentException z){
             assertTrue(true);
         }
+    }
+    @Test
+    public void testException2() {//testing if IllegalArgumentException is thrown when a negative number is input
+        String nums="1, 10, 4, -9";
+        try{
+            int n = calc.add(nums);
+        }
+        catch (IllegalArgumentException z){
+            assertTrue(true);
+        }
+    }
+    @Test
+    public void testIgnore() {//testing if inputs>1000 are ignored
+        String nums="1, 10, 100, 1000, 10000";
+        assertEquals(calc.add(nums), 1111);
     }
 }
