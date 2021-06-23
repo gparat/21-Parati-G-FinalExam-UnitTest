@@ -18,5 +18,14 @@ public class StringCalcTests {
         calc = null;
     }
 
-
+    @Test
+    public void testException() {//testing if IndexOutOfBoundsException is thrown when a endword is to large
+        String nums="-1, 10";
+        try{
+            int n = calc.add(nums);
+        }
+        catch (IllegalArgumentException z){
+            assertTrue(true);
+        }
+    }
 }
